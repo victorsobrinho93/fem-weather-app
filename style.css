@@ -1,0 +1,72 @@
+.hidden {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+  color: white;
+}
+
+body {
+  font-size: 18px;
+  background-color: hsl(243, 96%, 9%);
+  padding: 3rem;
+}
+
+#main-header {
+  color: white;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  background: url("assets/images/icon-search.svg") no-repeat 8px;
+  background-color: hsl(243, 23%, 30%);
+  background-size: 16px;
+  padding: 8px 8px 8px 32px;
+  /* padding-left: 32px; */
+  color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  border: none;
+}
+input :focus {
+  outline: none;
+  border: none;
+}
+
+button {
+  background-color: hsl(233, 67%, 56%);
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+.dropdown-item :hover {
+  font-weight: 700;
+  background-color: red;
+}
+
+#search-dropdown {
+  list-style: none;
+  background-color: hsl(243, 23%, 30%);
+  background-size: 16px;
+  padding: 8px 8px 8px 32px;
+  /* padding-left: 32px; */
+  color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  border: none;
+}
+
+#search {
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=style.css.map */

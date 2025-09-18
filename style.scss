@@ -1,0 +1,88 @@
+//
+
+$neutral_900: hsl(243, 96%, 9%);
+$neutral_800: hsl(243, 27%, 20%);
+$neutral_700: hsl(243, 23%, 24%);
+$neutral_600: hsl(243, 23%, 30%);
+$neutral_300: hsl(240, 6%, 70%);
+$neutral_200: hsl(250, 6%, 84%);
+$neutral_0: hsl(0, 0%, 100%);
+$blue_500: hsl(233, 67%, 56%);
+$blue_700: hsl(248, 70%, 36%);
+$orange_500: hsl(28, 100%, 52%);
+$dm_sans: "DM Sans", sans-serif;
+$bricolage: "Bricolage Grotesque", sans-serif;
+
+//
+.hidden {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $dm_sans;
+    color: white;
+}
+
+body {
+    font-size: 18px;
+    background-color: $neutral_900;
+    padding: 3rem;
+}
+
+#main-header {
+    color: white;
+    font-family: $bricolage;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin input-bg {
+    background-color: $neutral_600;
+    background-size: 16px;
+    padding: 8px 8px 8px 32px;
+    /* padding-left: 32px; */
+    color: $neutral_0;
+    border-radius: 8px;
+    border: none;
+}
+
+input {
+    background: url("assets/images/icon-search.svg") no-repeat 8px;
+    @include input-bg;
+    :focus {
+        outline: none;
+        border: none;
+    }
+}
+
+button {
+    background-color: $blue_500;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+.dropdown-item {
+    :hover {
+        font-weight: 700;
+        background-color: red;
+    }
+}
+
+#search-dropdown {
+    list-style: none;
+    @include input-bg;
+}
+
+#search {
+    display: flex;
+    flex-direction: row;
+}

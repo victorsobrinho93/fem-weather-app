@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Weather APP</title>
+    </head>
+    <body>
+        <header>
+            <img src="assets/images/logo.svg" alt="" id="main-logo" />
+            <nav id="navbar"></nav>
+        </header>
+        <main id="main">
+            <section id="main-header">
+                <h1 class="test">How's the sky looking today?</h1>
+                <div id="search">
+                    <div>
+                        <input
+                            type="text"
+                            id="search-bar"
+                            placeholder="Search for a place..."
+                        />
+                        <ul id="search-dropdown" class="hidden"><ul>
+                    </div>
+
+                    <button type="button" id="search-btn">Search</button>
+                </div>
+            </section>
+            <section id="forecast"></section>
+            <section id="hourly"></section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
