@@ -1,3 +1,5 @@
+@use "mixins.scss";
+
 //
 
 $neutral_900: hsl(243, 96%, 9%);
@@ -14,9 +16,6 @@ $dm_sans: "DM Sans", sans-serif;
 $bricolage: "Bricolage Grotesque", sans-serif;
 
 //
-.hidden {
-    display: none;
-}
 
 * {
     margin: 0;
@@ -31,6 +30,11 @@ body {
     padding: 3rem;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
 #main-header {
     color: white;
     font-family: $bricolage;
@@ -43,31 +47,35 @@ body {
     align-items: center;
 }
 
-@mixin input-bg {
-    background-color: $neutral_600;
-    background-size: 16px;
-    padding: 8px 8px 8px 32px;
-    /* padding-left: 32px; */
-    color: $neutral_0;
-    border-radius: 8px;
-    border: none;
+.icon {
+    width: 16px;
+    height: auto;
 }
 
 input {
     background: url("assets/images/icon-search.svg") no-repeat 8px;
-    @include input-bg;
+    @include mixins.input-bg;
     :focus {
         outline: none;
         border: none;
     }
 }
 
-button {
-    background-color: $blue_500;
-    padding: 8px;
+fieldset {
     border: none;
-    border-radius: 8px;
-    color: white;
+    @include mixins.flex-cl;
+    row-gap: 5px;
+    legend {
+        font-size: 14px;
+        color: $neutral_300;
+    }
+}
+
+#search-btn {
+    @include mixins.buttons;
+    background-color: $blue_500;
+    width: 120px;
+    height: 48px;
 }
 
 .dropdown-item {
@@ -79,10 +87,100 @@ button {
 
 #search-dropdown {
     list-style: none;
-    @include input-bg;
+    @include mixins.input-bg;
 }
 
 #search {
     display: flex;
     flex-direction: row;
+}
+
+#units-button {
+    @include mixins.buttons;
+    background-color: $neutral_600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4px;
+    width: 120px;
+    height: 44px;
+}
+
+#units-dropdown {
+    background-color: $neutral_600;
+    @include mixins.flex-cl;
+    padding: 5px;
+    border-radius: 1rem;
+    row-gap: 3px;
+}
+
+// #imperial-btn {
+//     background-color: $neutral_600;
+// }
+
+// .menu-header {
+//     font-size: 16px;
+//
+// }
+
+// .menu-option {
+//     background-color: $neutral_700;
+//     padding: 3px 12px;
+//     border-radius: 4px;
+// }
+
+.menu-partition {
+    @include mixins.flex-cl;
+}
+
+#units-menu {
+    @include mixins.flex-cl;
+    align-items: flex-end;
+}
+
+.units-btn {
+    background-color: $neutral_700;
+    padding: 3px 12px;
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    height: 40px;
+    text-align: left;
+}
+
+.selected {
+    background-color: $neutral_600;
+}
+
+hr {
+    color: $neutral_300;
+    margin: 6px 0;
+}
+
+#select-units {
+    @include mixins.flex-cl;
+    position: relative;
+}
+
+#units-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    z-index: 100;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+#units-dropdown.hidden {
+    // display: none;
+    // transition: transform 0.5 ease;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.active img {
+    transform: rotate(180deg);
+    // transition: transform 0.3s ease;
 }

@@ -15,7 +15,8 @@
     <body>
         <header>
             <img src="assets/images/logo.svg" alt="" id="main-logo" />
-            <nav id="navbar"></nav>
+            </div>
+            
         </header>
         <main id="main">
             <section id="main-header">
@@ -33,9 +34,16 @@
                     <button type="button" id="search-btn">Search</button>
                 </div>
             </section>
-            <section id="forecast"></section>
-            <section id="hourly"></section>
+            <section id="forecast">
+                <div id="current-forecast">
+                </div>
+                <div id="daily_forecast"></div>
+            </section>
+            <section id="hourly-forecast">
+                <label for="select-day">Hourly Forecast</label>
+                <select name="select-day" id="select-day"></select>
+            </section>
         </main>
-        <script src="script.js"></script>
+        <script type="module" src="js/main.js"></script>
     </body>
 </html>
